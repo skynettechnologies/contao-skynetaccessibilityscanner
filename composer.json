@@ -1,9 +1,9 @@
 {
     "name": "skynettechnologies/contao-skynetaccessibilityscanner",
-    "description": "Skynet Accessibility Scanner plugin for Contao",
+    "description": "Scan, monitor, and identify website accessibility issues across WCAG 2.0, 2.1, 2.2, ADA, Section 508, EN 301 549, UK Equality Act, Australian DDA, and Canada ACA. Get simple issue highlights with recommended fixes.",
     "type": "contao-module",
     "license": "LGPL-3.0+",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "authors": [
         {
             "name": "Skynet Technologies USA LLC"

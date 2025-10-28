@@ -1,0 +1,8 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  Skynettechnologies\ContaoSkynetaccessibilityScanner\:
+    resource: ../src
+    exclude: ../src/{ContaoManager,DependencyInjection}

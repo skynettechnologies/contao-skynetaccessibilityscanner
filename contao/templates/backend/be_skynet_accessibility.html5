@@ -1,42 +1,10 @@
 <?php
+
 $websitename = $_SERVER['HTTP_HOST'];
-$arrDetails = [
-    'website'        => base64_encode($websitename), // Encode domain
-    'platform'       => 'Contao CMS',
-    'is_trial_period'=> 1,
-    'name'           => $websitename,
-    'email'          => 'no-reply@' . $websitename,
-    'comapany_name'  => $websitename,
-    'package_type'   => '10-pages'
-];
-// register user domain on scanning & monitoring dashboard
-$ch = curl_init('https://skynetaccessibilityscan.com/api/register-domain-platform');
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-curl_setopt($ch, CURLOPT_POSTFIELDS, $arrDetails);
-
-$response = curl_exec($ch);
-if (curl_errno($ch)) {
-    echo 'Curl error: ' . curl_error($ch);
-}
-curl_close($ch);
-
-// Decode API response
-$jsonStart = strpos($response, '{');
-if ($jsonStart !== false) {
-    $jsonPart = substr($response, $jsonStart);
-    $result = json_decode($jsonPart, true);
-    
-} else {
-    echo "Invalid response: " . $response;
-} 
-
-$domain_name = $_SERVER['HTTP_HOST'];
 
 /**
  * Common function to call cURL POST API
- */
+*/
 function callApiPost($url, $postData, $isJson = false) {
     $curl = curl_init();
     $options = [

@@ -5,11 +5,21 @@ namespace Skynettechnologies\ContaoSkynetaccessibilityScanner\Controller\Backend
 use Contao\BackendModule;
 use Contao\BackendUser;
 
-        $user = BackendUser::getInstance();
-        $username  = $user->username;
-        $useremail = $user->email;
-
+        // ❗ Prevent error in CLI (composer / contao-setup)
+        if (php_sapi_name() === 'cli') {
+            return;
+        }
         $websitename   = $_SERVER['HTTP_HOST'];
+        // ✅ Get logged-in backend user
+        $user = BackendUser::getInstance();
+
+        if ($user !== null) {
+            $username  = $user->username;
+            $useremail = $user->email;
+        } else {
+            $username  = '';
+            $useremail = '';
+        }
       
         $arrDetails = [
             'website'        => base64_encode($websitename), // Encode domain

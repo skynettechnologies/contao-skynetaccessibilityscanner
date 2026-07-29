@@ -2,7 +2,7 @@
 
 
    
-    $domain_name =  $_SERVER['HTTP_HOST'];
+     $domain_name =  $_SERVER['HTTP_HOST'];
     /**
      * Common function to call cURL POST API
      */
@@ -135,6 +135,10 @@
 <link rel="icon" href="https://www.skynettechnologies.com/sites/default/files/favicon_0.webp" type="image/png" />
 <link href="https://sanity.skynettechnologies.us/assets/css/scanning-and-monitoring-app.css" rel="stylesheet">
 <style>
+#main_headline {
+  
+    color: initial !important;
+}
      p {
         line-height: 30px !important;
     }
@@ -327,6 +331,9 @@
         }
     }
 }
+body{
+        color: black !important;
+}
 </style>
 </head>
 
@@ -352,7 +359,8 @@
                 <div class="scanning-monitoring-app">
                     <div class="scans">
 
-                        <p class="title">My Scans</p>
+                       
+                        <p class="title" style="color: initial;">My Scans</p>
 
                         <!-- Status Section -->
                         <section class="status" style="background-image: url('https://sanity.skynettechnologies.us/assets/images/sitemap-bg.png');background-repeat: no-repeat;background-position: center;background-size: cover;">
@@ -687,20 +695,20 @@
 <div id="page-wrapper">
 <div id="page">
 <div id="main-wrapper" class="layout-main-wrapper clearfix">
-<div id="main" class="container">
+<div class="container">
 <div class="row row-offcanvas row-offcanvas-left clearfix">
-    <main class="main-content col" id="content" r ole="main">
-        <section class="section">
-            <div id="main-content" tabindex="-1"></div>
-            <div id="block-skynettechnologies-content"
-                class="block block-system block-system-main-block">
-                <div class="content">
+<main class="main-content col" id="content" r ole="main">
+<section class="section">
+<div id="main-content" tabindex="-1"></div>
+<div id="block-skynettechnologies-content" class="block block-system block-system-main-block">
+                <div class="">
                     <article data-history-node-id="529"
                         class="node node--type-page node--view-mode-full clearfix">
                         <div class="node__content clearfix ">
                             <div class="scanning-monitoring-app">
                                 <div class="accessibility-report">
-                                    <div class="report-date">
+                                                                    <div class="report-date" style="color: initial;">
+                                    
                                         <label for="report-date">Report Date:</label>
                                         <select id="report-date">
                                            <option selected>
